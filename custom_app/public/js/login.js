@@ -76,8 +76,14 @@ const preLoginNavbar = () => {
     const signuptext = document.querySelector('.text-center.sign-up-message');
     const pageContent = document.querySelector('.page_content');
     if (pageContent) {
+
+
         pageContent.style.alignContent = 'center';
         pageContent.style.height = '80vh';
+        // pageContent.style.backgroundColor = 'red';
+        pageContent.style.width = '100%';
+        pageContent.style.padding = '0px';
+
         // pageContent.style.display = 'flex';
         // pageContent.style.flexDirection = 'column';
 
@@ -110,6 +116,9 @@ const preLoginNavbar = () => {
                 pagecardhead.style.alignItems = 'center'
                 pagecardhead.style.flexDirection = 'column'
                 pagecardhead.style.padding = '20px';
+                if (screenWidth >= 1400) {
+                    pagecardhead.style.marginLeft = '-20px';
+                }
             }
         }
 
@@ -127,7 +136,7 @@ const preLoginNavbar = () => {
                 loginLogo.src = '/assets/custom_app/images/mk_logo.png';
                 loginLogo.style.width = '200px';
                 loginLogo.style.display = 'block'
-                loginLogo.style.margin = '30px auto 10px';
+                loginLogo.style.margin = '60px auto 20px';
             }
 
         }
@@ -139,12 +148,13 @@ const preLoginNavbar = () => {
             welcomemessage.style.textAlign = 'center';
             welcomemessage.style.margin = '0px auto 0px';
             welcomemessage.style.fontSize = '24px';
-            welcomemessage.style.color = '#33333398';
+            welcomemessage.style.color = '#000';
 
             const welcomemessage1 = document.createElement('p');
             welcomemessage1.textContent = 'Sign in for easy management';
             welcomemessage1.style.color = "#007e85";
-            welcomemessage1.style.fontSize = '12px';
+            welcomemessage1.style.fontSize = '13px';
+            welcomemessage1.style.marginTop = '12px';
 
             logincardheading.parentNode.insertBefore(welcomemessage, logincardheading);
             logincardheading.parentNode.insertBefore(welcomemessage1, logincardheading);
@@ -167,6 +177,18 @@ const preLoginNavbar = () => {
         const passwordFieldsvg = pageCardBody.querySelector('.password-field .field-icon.password-icon');
         const forgotpassword = pageCardBody.querySelector('.forgot-password-message');
         const sociallogins = pageCardBody.querySelector('.social-logins.text-center');
+        const emailInput = emailField.querySelector('input');
+        const passwordInput = passwordField.querySelector('input');
+
+
+        if (emailInput) {
+            emailInput.placeholder = "Enter your email";
+        }
+
+        if (passwordInput) {
+            passwordInput.placeholder = "Enter your password";
+        }
+
 
         if (logincontent) {
             if (screenWidth <= 370) {
@@ -196,6 +218,10 @@ const preLoginNavbar = () => {
                 newlogo.style.margin = '0px auto 10px'
                 newlogo.style.width = '200px'
                 logincontent.insertBefore(newlogo, logincontent.firstChild);
+
+                if (screenWidth >= 1400) {
+                    pagecardhead.style.marginLeft = '200px';
+                }
 
             }
             if (emailFieldsvg) {
