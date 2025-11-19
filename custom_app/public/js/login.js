@@ -293,7 +293,7 @@ const preLoginNavbar = () => {
         newDiv.style.alignContent = 'end';
         newDiv.style.position = "fixed";
         newDiv.style.left = "0";
-        newDiv.style.bottom = "30px";
+        newDiv.style.bottom = "0";
         newDiv.style.width = "100%";
         newDiv.style.zIndex = "999";
         pageContent.appendChild(newDiv);
