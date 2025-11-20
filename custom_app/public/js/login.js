@@ -65,7 +65,7 @@ const preLoginNavbar = () => {
 
     const footer = document.querySelector('.web-footer');
     if (footer) {
-        footer.style.display = "none"
+        // footer.style.display = "none"
     }
 
 
@@ -80,17 +80,8 @@ const preLoginNavbar = () => {
 
         pageContent.style.alignContent = 'center';
         pageContent.style.height = '80vh';
-        // pageContent.style.backgroundColor = 'red';
         pageContent.style.width = '100%';
         pageContent.style.padding = '0px';
-
-        // pageContent.style.display = 'flex';
-        // pageContent.style.flexDirection = 'column';
-
-
-        if (pagefooter) {
-            pagefooter.style.display = "none";
-        }
         if (signuptext) {
             signuptext.style.display = 'none';
         }
@@ -116,8 +107,8 @@ const preLoginNavbar = () => {
                 pagecardhead.style.alignItems = 'center'
                 pagecardhead.style.flexDirection = 'column'
                 pagecardhead.style.padding = '20px';
-                if (screenWidth >= 1400) {
-                    pagecardhead.style.marginLeft = '-20px';
+                if (screenWidth >= 1300) {
+                    pagecardhead.style.marginLeft = '6%';
                 }
             }
         }
@@ -175,7 +166,7 @@ const preLoginNavbar = () => {
         const passwordField = pageCardBody.querySelector('.password-field');
         const showbutton = pageCardBody.querySelector('.password-field .toggle-password.text-muted');
         const passwordFieldsvg = pageCardBody.querySelector('.password-field .field-icon.password-icon');
-        const forgotpassword = pageCardBody.querySelector('.forgot-password-message');
+        const forgotpassword = pageCardBody.querySelector('.forgot-password-message a');
         const sociallogins = pageCardBody.querySelector('.social-logins.text-center');
         const emailInput = emailField.querySelector('input');
         const passwordInput = passwordField.querySelector('input');
@@ -217,10 +208,12 @@ const preLoginNavbar = () => {
                 newlogo.style.display = 'block'
                 newlogo.style.margin = '0px auto 10px'
                 newlogo.style.width = '200px'
+                newlogo.style.padding = '5px'
                 logincontent.insertBefore(newlogo, logincontent.firstChild);
 
-                if (screenWidth >= 1400) {
-                    pagecardhead.style.marginLeft = '200px';
+                if (screenWidth >= 1200) {
+                    logincontent.style.marginRight = '-2%';
+
                 }
 
             }
@@ -235,7 +228,23 @@ const preLoginNavbar = () => {
                 showbutton.style.color = '#007e85 !important';
             }
             if (forgotpassword) {
-                forgotpassword.style.display = 'none'
+                forgotpassword.style.backgroundColor = 'transparent'
+                forgotpassword.style.boxShadow = 'none'
+                forgotpassword.style.color = '#888';
+                forgotpassword.style.transition = '500ms'
+
+                forgotpassword.addEventListener('mouseover', () => {
+                    forgotpassword.style.backgroundColor = 'transparent'
+                    forgotpassword.style.boxShadow = 'none'
+                    forgotpassword.style.color = '#007e85'
+
+                })
+                forgotpassword.addEventListener('mouseout', () => {
+                    forgotpassword.style.backgroundColor = 'transparent'
+                    forgotpassword.style.boxShadow = 'none';
+                    forgotpassword.style.color = '#888'
+                })
+
             }
             if (sociallogins) {
                 sociallogins.style.display = 'none'
@@ -274,30 +283,30 @@ const preLoginNavbar = () => {
             }
         }
     }
-    if (pageContent) {
-        const newDiv = document.createElement('div');
-        newDiv.innerHTML = `
-		<p style="color:#888;font-size:12px">
-			Powered by
-			<!-- <a href="https://hippoclouds.com/" target="_blank">HippoCloud</a> -->
-			<a href="https://hippoclouds.com/" target="_blank" style="margin-left:10px;">
-				<img src="/assets/custom_app/images/hippologo.png"
-					alt="Hippo Clouds" style="height:35px; vertical-align:middle; margin-left:4px;">
-			</a>
-		</p>
-	`;
-        newDiv.style.padding = "10px";
-        newDiv.style.background = "#f2f2f2";
-        // newDiv.style.margin = '120px auto 20px';
-        newDiv.style.textAlign = 'center';
-        newDiv.style.alignContent = 'end';
-        newDiv.style.position = "fixed";
-        newDiv.style.left = "0";
-        newDiv.style.bottom = "0";
-        newDiv.style.width = "100%";
-        newDiv.style.zIndex = "999";
-        pageContent.appendChild(newDiv);
-    }
+    // if (pageContent) {
+    //     const newDiv = document.createElement('div');
+    //     newDiv.innerHTML = `
+    // 	<p style="color:#888;font-size:12px">
+    // 		Powered by
+    // 		<!-- <a href="https://hippoclouds.com/" target="_blank">HippoCloud</a> -->
+    // 		<a href="https://hippoclouds.com/" target="_blank" style="margin-left:10px;">
+    // 			<img src="/assets/custom_app/images/hippologo.png"
+    // 				alt="Hippo Clouds" style="height:35px; vertical-align:middle; margin-left:4px;">
+    // 		</a>
+    // 	</p>
+    // `;
+    //     newDiv.style.padding = "10px";
+    //     newDiv.style.background = "#f2f2f2";
+    //     // newDiv.style.margin = '120px auto 20px';
+    //     newDiv.style.textAlign = 'center';
+    //     newDiv.style.alignContent = 'end';
+    //     newDiv.style.position = "fixed";
+    //     newDiv.style.left = "0";
+    //     newDiv.style.bottom = "0";
+    //     newDiv.style.width = "100%";
+    //     newDiv.style.zIndex = "999";
+    //     pageContent.appendChild(newDiv);
+    // }
 
 }
 
