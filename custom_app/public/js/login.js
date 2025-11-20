@@ -1,8 +1,19 @@
 
 const screenWidth = window.innerWidth;
+// document.getElementById('page-content-wrapper').style.background = '#fff'
+document.getElementById('page-login').style.background = '#fff'
 
 const preLoginNavbar = () => {
     const navbar = document.querySelector(".navbar.navbar-light.navbar-expand-lg");
+    const main = document.querySelector(".container.my-4");
+
+    const login = document.getElementById('page-login')
+    if (login) {
+        login.style.background = '#fff'
+    }
+    if (main) {
+        main.style.backgroundColor = '#fff'
+    }
     if (navbar) {
         navbar.style.height = "48px"
     }
@@ -20,6 +31,7 @@ const preLoginNavbar = () => {
             logoWrapper.style.justifyContent = 'center';
             logoWrapper.style.boxShadow = '0px 0px 7px grey';
             logoWrapper.style.height = '40px';
+            logoWrapper.style.margin = '3px';
             logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style ="max-height: 35px; width: auto;"/>`
         }
 
@@ -48,17 +60,17 @@ const preLoginNavbar = () => {
 
         const homeButton = document.querySelector('.page-card-body a');
         if (homeButton) {
-            homeButton.style.background = "#007e85";
+            homeButton.style.background = "#956438";
             homeButton.style.border = "none";
             homeButton.style.borderRadius = "5px";
             homeButton.style.boxShadow = "0px 0px 4px #ccc";
             homeButton.style.transition = "500ms";
 
             homeButton.addEventListener('mouseout', () => {
-                homeButton.style.background = "#007e85";
+                homeButton.style.background = "#956438";
             })
             homeButton.addEventListener('mouseover', () => {
-                homeButton.style.background = "#956438";
+                homeButton.style.background = "#007e85";
             })
         }
     }
@@ -174,10 +186,16 @@ const preLoginNavbar = () => {
 
         if (emailInput) {
             emailInput.placeholder = "Enter your email";
+            emailInput.style.backgroundColor = '#fff'
+            emailInput.style.boxShadow = '0px 0px 4px #888'
+            emailInput.style.borderRadius = '4px'
         }
 
         if (passwordInput) {
             passwordInput.placeholder = "Enter your password";
+            passwordInput.style.backgroundColor = '#fff'
+            passwordInput.style.boxShadow = '0px 0px 4px #888'
+            passwordInput.style.borderRadius = '4px'
         }
 
 
@@ -185,7 +203,7 @@ const preLoginNavbar = () => {
             if (screenWidth <= 370) {
                 logincontent.style.width = "300px";
                 logincontent.style.backgroundColor = "#fff"
-                logincontent.style.boxShadow = "0px 0px 5px #ccc"
+                logincontent.style.boxShadow = "0px 0px 5px #888"
                 logincontent.style.borderRadius = "8px";
                 logincontent.style.marginLeft = "0px";
 
@@ -200,7 +218,7 @@ const preLoginNavbar = () => {
             else {
                 logincontent.style.width = "350px";
                 logincontent.style.backgroundColor = "#fff"
-                logincontent.style.boxShadow = "0px 0px 5px #ccc"
+                logincontent.style.boxShadow = "0px 0px 5px #888"
                 logincontent.style.borderRadius = "8px";
 
                 const newlogo = document.createElement('img');
@@ -265,50 +283,166 @@ const preLoginNavbar = () => {
             }
             const pagecardactions = pageCardBody.querySelector('.page-card-actions button');
             if (pagecardactions) {
-                pagecardactions.style.background = '#007e85';
+                pagecardactions.style.background = '#956438';
                 pagecardactions.style.borderRadius = '5px'
-                pagecardactions.style.boxShadow = '0px 0px 5px #ccc';
+                pagecardactions.style.boxShadow = '0px 0px 5px #888';
                 pagecardactions.style.transition = '500ms';
 
 
                 pagecardactions.addEventListener('mouseover', () => {
-                    pagecardactions.style.background = '#956438';
+                    pagecardactions.style.background = '#007e85';
                 });
                 pagecardactions.addEventListener('mouseout', () => {
-                    pagecardactions.style.background = '#007e85';
+                    pagecardactions.style.background = '#956438';
                 });
 
 
 
             }
+
         }
     }
-    // if (pageContent) {
-    //     const newDiv = document.createElement('div');
-    //     newDiv.innerHTML = `
-    // 	<p style="color:#888;font-size:12px">
-    // 		Powered by
-    // 		<!-- <a href="https://hippoclouds.com/" target="_blank">HippoCloud</a> -->
-    // 		<a href="https://hippoclouds.com/" target="_blank" style="margin-left:10px;">
-    // 			<img src="/assets/custom_app/images/hippologo.png"
-    // 				alt="Hippo Clouds" style="height:35px; vertical-align:middle; margin-left:4px;">
-    // 		</a>
-    // 	</p>
-    // `;
-    //     newDiv.style.padding = "10px";
-    //     newDiv.style.background = "#f2f2f2";
-    //     // newDiv.style.margin = '120px auto 20px';
-    //     newDiv.style.textAlign = 'center';
-    //     newDiv.style.alignContent = 'end';
-    //     newDiv.style.position = "fixed";
-    //     newDiv.style.left = "0";
-    //     newDiv.style.bottom = "0";
-    //     newDiv.style.width = "100%";
-    //     newDiv.style.zIndex = "999";
-    //     pageContent.appendChild(newDiv);
-    // }
 
 }
 
 
-preLoginNavbar()
+
+const forgotPasswordUI = () => {
+
+    const screenWidth = window.innerWidth;
+
+    const navbar = document.querySelector(".navbar.navbar-light.navbar-expand-lg");
+    if (navbar) {
+        navbar.style.height = "48px";
+        navbar.style.background = 'linear-gradient(90deg,#007e85 0%,#007e85dc 30%,#007e85d8 60%,#007e85dc 80%,#007e85 100%)';
+
+        const logoWrapper = document.querySelector('.navbar-brand');
+        if (logoWrapper) {
+            logoWrapper.style.backgroundColor = 'rgb(255, 255, 255)';
+            logoWrapper.style.borderRadius = '10px';
+            logoWrapper.style.padding = '5px 10px';
+            logoWrapper.style.display = 'flex';
+            logoWrapper.style.alignItems = 'center';
+            logoWrapper.style.justifyContent = 'center';
+            logoWrapper.style.boxShadow = '0px 0px 7px grey';
+            logoWrapper.style.height = '40px';
+            logoWrapper.style.margin = '3px';
+            logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style="max-height: 35px; width:auto;" />`;
+        }
+    }
+
+    const forgotCard = document.querySelector('.for-forgot');
+    if (!forgotCard) return;
+
+    forgotCard.style.display = "flex";
+    forgotCard.style.flexDirection = "row";
+    forgotCard.style.justifyContent = "space-between";
+    forgotCard.style.width = "100%";
+
+    const pagecardhead = forgotCard.querySelector('.page-card-head');
+    const forgotFormContainer = forgotCard.querySelector('.for-forgot .login-content.page-card');
+    if (forgotFormContainer) {
+        forgotFormContainer.style.boxShadow = '0px 0px 4px #ccc';
+        if (screenWidth >= 1200) {
+            forgotFormContainer.style.marginRight = '-2%';
+
+        }
+    }
+    if (pagecardhead) {
+        pagecardhead.style.display = "flex";
+        pagecardhead.style.flexDirection = "column";
+        pagecardhead.style.alignItems = "center";
+        pagecardhead.style.padding = "20px";
+
+        if (screenWidth >= 1200) {
+            pagecardhead.style.marginLeft = '12%';
+
+        }
+
+        const logo = pagecardhead.querySelector('.app-logo');
+        const heading = pagecardhead.querySelector('h4');
+
+        if (logo) {
+            logo.src = "/assets/custom_app/images/mk_logo.png";
+            logo.style.width = (screenWidth <= 370) ? "150px" : "200px";
+            logo.style.margin = (screenWidth <= 370) ? "30px auto 10px" : "60px auto 20px";
+            logo.style.display = "block";
+        }
+
+        if (heading) {
+            heading.style.fontSize = "22px";
+            heading.style.fontWeight = "700";
+            heading.style.marginTop = "10px";
+            heading.style.color = "#000";
+        }
+    }
+
+    const forgotForm = forgotCard.querySelector('.form-signin.form-forgot');
+    if (forgotForm) {
+        forgotForm.style.width = (screenWidth <= 370) ? "300px" : "350px";
+        forgotForm.style.backgroundColor = "#fff";
+
+        const newlogo = document.createElement('img');
+        newlogo.src = `/assets/custom_app/images/mk_logo.png`;
+        newlogo.style.display = 'block'
+        newlogo.style.margin = '0px auto 30px'
+        newlogo.style.width = (screenWidth <= 370) ? "150px" : "200px"
+        forgotForm.insertBefore(newlogo, forgotForm.firstChild);
+
+    }
+
+    const emailField = forgotCard.querySelector('.email-field');
+    const formFields = forgotCard.querySelector('.form-control');
+    if (emailField) {
+        emailField.style.display = "flex";
+        emailField.style.alignItems = "center";
+        emailField.style.background = "#fff";
+        emailField.style.height = "33px";
+        emailField.style.marginTop = "15px";
+
+    }
+
+    const emailInput = forgotCard.querySelector('#forgot_email');
+    if (emailInput) {
+        emailInput.placeholder = "Enter your email";
+        emailInput.style.backgroundColor = '#fff'
+        emailInput.style.boxShadow = '0px 0px 4px #888'
+        emailInput.style.borderRadius = '4px'
+    }
+
+    const emailIcon = forgotCard.querySelector('.email-field .field-icon');
+    if (emailIcon) {
+        emailIcon.style.marginTop = "-8px";
+    }
+    const resetBtn = forgotCard.querySelector('.btn-forgot');
+    if (resetBtn) {
+        resetBtn.style.background = "#956438";
+        resetBtn.style.borderRadius = "5px";
+        resetBtn.style.boxShadow = "0px 0px 5px #888";
+        resetBtn.style.transition = "500ms";
+        resetBtn.style.marginTop = "-10px";
+
+        resetBtn.addEventListener("mouseover", () => {
+            resetBtn.style.background = "#007e85";
+        });
+        resetBtn.addEventListener("mouseout", () => {
+            resetBtn.style.background = "#956438";
+        });
+    }
+
+    const backToLogin = forgotCard.querySelector('.sign-up-message a');
+    if (backToLogin) {
+        backToLogin.style.color = "#888";
+        backToLogin.style.transition = "500ms";
+
+        backToLogin.addEventListener("mouseover", () => {
+            backToLogin.style.color = "#007e85";
+        });
+        backToLogin.addEventListener("mouseout", () => {
+            backToLogin.style.color = "#888";
+        });
+    }
+};
+
+preLoginNavbar();
+forgotPasswordUI()
