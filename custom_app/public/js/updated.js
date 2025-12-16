@@ -192,26 +192,26 @@ function updatePageHeader() {
 
     const menuOptionSpan = document.querySelector('.menu-btn-group-label');
 
-    if (menuOptionSpan) {
-        const unwantedSVG = menuOptionSpan.querySelector('svg');
+    // if (menuOptionSpan) {
+    //     const unwantedSVG = menuOptionSpan.querySelector('svg');
 
-        if (unwantedSVG) unwantedSVG.remove();
+    //     if (unwantedSVG) unwantedSVG.remove();
 
-        let optionImg = menuOptionSpan.querySelector('img.option-icon');
+    //     let optionImg = menuOptionSpan.querySelector('img.option-icon');
 
-        if (!optionImg) {
-            optionImg = document.createElement('img');
-            optionImg.src = '/assets/custom_app/images/option.png';
-            optionImg.alt = 'Option';
-            optionImg.classList.add('option-icon');
-            optionImg.style.width = '16px';
-            optionImg.style.height = '16px';
-            optionImg.style.objectFit = 'contain';
-            menuOptionSpan.appendChild(optionImg);
-        } else {
-            optionImg.src = '/assets/custom_app/images/option.png';
-        }
-    }
+    //     if (!optionImg) {
+    //         optionImg = document.createElement('img');
+    //         optionImg.src = '/assets/custom_app/images/option.png';
+    //         optionImg.alt = 'Option';
+    //         optionImg.classList.add('option-icon');
+    //         optionImg.style.width = '16px';
+    //         optionImg.style.height = '16px';
+    //         optionImg.style.objectFit = 'contain';
+    //         menuOptionSpan.appendChild(optionImg);
+    //     } else {
+    //         optionImg.src = '/assets/custom_app/images/option.png';
+    //     }
+    // }
 
     const actionsSVGs = document.querySelectorAll('.actions-btn-group svg');
     actionsSVGs.forEach(svg => {
@@ -247,39 +247,37 @@ function updatePageHeader() {
 
 
 
-function updateSortIcon() {
-    const sortBtn = document.querySelector('.btn-order');
-    const sortIcon = document.querySelector('.btn-order .sort-order');
+// function updateSortIcon() {
+//     const sortBtn = document.querySelector('.btn-order');
+//     const sortIcon = document.querySelector('.btn-order .sort-order');
 
-    if (!sortBtn || !sortIcon) {
-        setTimeout(updateSortIcon, 100);
-        return;
-    }
+//     if (!sortBtn || !sortIcon) {
+//         setTimeout(updateSortIcon, 100);
+//         return;
+//     }
 
-    const sortOrder = sortBtn.getAttribute("data-value") || "asc";
+//     const sortOrder = sortBtn.getAttribute("data-value") || "asc";
 
-    const oldImg = sortIcon.querySelector('img');
-    if (oldImg) oldImg.remove();
+//     const oldImg = sortIcon.querySelector('img');
+//     if (oldImg) oldImg.remove();
 
-    const oldSvg = sortIcon.querySelector('svg');
-    if (oldSvg) oldSvg.remove();
+//     const oldSvg = sortIcon.querySelector('svg');
+//     if (oldSvg) oldSvg.remove();
 
-    const imgSrc = sortOrder === "desc"
-        ? "/assets/custom_app/images/sort-desc.png"
-        : "/assets/custom_app/images/sort-asc.png";
+//     const imgSrc = sortOrder === "desc"
+//         ? "/assets/custom_app/images/sort-desc.png"
+//         : "/assets/custom_app/images/sort-asc.png";
 
-    const altText = sortOrder === "desc" ? "Descending" : "Ascending";
+//     const altText = sortOrder === "desc" ? "Descending" : "Ascending";
 
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = altText;
-    img.style.width = "20px";
-    img.style.borderRadius = "2px";
+//     const img = document.createElement("img");
+//     img.src = imgSrc;
+//     img.alt = altText;
+//     img.style.width = "20px";
+//     img.style.borderRadius = "2px";
 
-    sortIcon.appendChild(img);
-}
-
-
+//     sortIcon.appendChild(img);
+// }
 
 
 
@@ -287,7 +285,9 @@ function updateSortIcon() {
 
 
 
-updateSortIcon();
+
+
+// updateSortIcon();
 updatePageHeader();
 updateNavbarBell();
 updateNavbarLogo();

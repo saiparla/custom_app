@@ -9,14 +9,17 @@ app_license = "MIT"
 # app_include_js = "/assets/custom_app/js/updated.js"   
 app_include_js = [
     "/assets/custom_app/js/updated.js",
-    "/assets/custom_app/js/login.js"
+    "/assets/custom_app/js/login.js",
+     "/assets/custom_app/js/deskpage.js"
 ]
 
 
 # Include JS in header of website pages
 web_include_js = [
     "/assets/custom_app/js/updated.js",
-    "/assets/custom_app/js/login.js"
+    "/assets/custom_app/js/login.js",
+     "/assets/custom_app/js/deskpage.js"
+
 ]
 # web_include_js = "/assets/custom_app/js/updated.js"
 
