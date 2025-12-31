@@ -16,6 +16,7 @@ frappe.call({
             localStorage.removeItem('company');
             logotoggle = false;
         }
+        console.log(r)
 
         // preLoginNavbar();
         // forgotPasswordUI();

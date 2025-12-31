@@ -21,7 +21,6 @@ web_include_js = [
     "/assets/custom_app/js/login.js",
      "/assets/custom_app/js/deskpage.js",
      "/assets/custom_app/js/navbar.js"
-
 ]
 # web_include_js = "/assets/custom_app/js/updated.js"
 

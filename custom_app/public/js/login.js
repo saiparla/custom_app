@@ -22,18 +22,18 @@ const preLoginNavbar = () => {
     if (navbar) {
         navbar.style.background = 'linear-gradient(90deg,#007e85 0%,#007e85dc 30%,#007e85d8 60%,#007e85dc 80%,#007e85 100%)';
         const logoWrapper = document.querySelector('.navbar-brand');
-        if (logoWrapper) {
-            logoWrapper.style.backgroundColor = 'rgb(255, 255, 255)';
-            logoWrapper.style.borderRadius = '10px';
-            logoWrapper.style.padding = '5px 10px';
-            logoWrapper.style.display = 'flex';
-            logoWrapper.style.alignItems = 'center';
-            logoWrapper.style.justifyContent = 'center';
-            logoWrapper.style.boxShadow = '0px 0px 7px grey';
-            logoWrapper.style.height = '40px';
-            logoWrapper.style.margin = '3px';
-            logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style ="max-height: 35px; width: auto;"/>`
-        }
+        // if (logoWrapper) {
+        //     logoWrapper.style.backgroundColor = 'rgb(255, 255, 255)';
+        //     logoWrapper.style.borderRadius = '10px';
+        //     logoWrapper.style.padding = '5px 10px';
+        //     logoWrapper.style.display = 'flex';
+        //     logoWrapper.style.alignItems = 'center';
+        //     logoWrapper.style.justifyContent = 'center';
+        //     logoWrapper.style.boxShadow = '0px 0px 7px grey';
+        //     logoWrapper.style.height = '40px';
+        //     logoWrapper.style.margin = '3px';
+        //     logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style ="max-height: 35px; width: auto;"/>`
+        // }
 
         const logintext = document.querySelector(".nav-link.btn-login-area");
         if (logintext) {
@@ -316,19 +316,19 @@ const forgotPasswordUI = () => {
         navbar.style.height = "48px";
         navbar.style.background = 'linear-gradient(90deg,#007e85 0%,#007e85dc 30%,#007e85d8 60%,#007e85dc 80%,#007e85 100%)';
 
-        const logoWrapper = document.querySelector('.navbar-brand');
-        if (logoWrapper) {
-            logoWrapper.style.backgroundColor = 'rgb(255, 255, 255)';
-            logoWrapper.style.borderRadius = '10px';
-            logoWrapper.style.padding = '5px 10px';
-            logoWrapper.style.display = 'flex';
-            logoWrapper.style.alignItems = 'center';
-            logoWrapper.style.justifyContent = 'center';
-            logoWrapper.style.boxShadow = '0px 0px 7px grey';
-            logoWrapper.style.height = '40px';
-            logoWrapper.style.margin = '3px';
-            logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style="max-height: 35px; width:auto;" />`;
-        }
+        // const logoWrapper = document.querySelector('.navbar-brand');
+        // if (logoWrapper) {
+        //     logoWrapper.style.backgroundColor = 'rgb(255, 255, 255)';
+        //     logoWrapper.style.borderRadius = '10px';
+        //     logoWrapper.style.padding = '5px 10px';
+        //     logoWrapper.style.display = 'flex';
+        //     logoWrapper.style.alignItems = 'center';
+        //     logoWrapper.style.justifyContent = 'center';
+        //     logoWrapper.style.boxShadow = '0px 0px 7px grey';
+        //     logoWrapper.style.height = '40px';
+        //     logoWrapper.style.margin = '3px';
+        //     logoWrapper.innerHTML = `<img src='/assets/custom_app/images/mk_logo.png' style="max-height: 35px; width:auto;" />`;
+        // }
     }
 
     const forgotCard = document.querySelector('.for-forgot');
