@@ -1,7 +1,7 @@
 
 const screenWidth = window.innerWidth;
 // document.getElementById('page-content-wrapper').style.background = '#fff'
-document.getElementById('page-login').style.background = '#fff'
+// document.getElementById('page-login').style.background = '#fff'
 
 const preLoginNavbar = () => {
     const navbar = document.querySelector(".navbar.navbar-light.navbar-expand-lg");

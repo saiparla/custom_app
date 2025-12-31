@@ -1,4 +1,36 @@
 
+let logotoggle = false;
+
+frappe.call({
+    method: "custom_app.api.get_logged_user_company",
+    callback: function (r) {
+        const company = r.message;
+
+        if (company && typeof company === "string") {
+            localStorage.setItem('company', company);
+
+            if (company === "MK Eco Bricks") {
+                logotoggle = true;
+            }
+        } else {
+            localStorage.removeItem('company');
+            logotoggle = false;
+        }
+
+        // preLoginNavbar();
+        // forgotPasswordUI();
+    },
+    error: function () {
+        localStorage.removeItem('company');
+        logotoggle = false;
+        // preLoginNavbar();
+        // forgotPasswordUI();
+    }
+});
+// alert(`a ${logotoggle}`)
+
+
+
 
 function changeNavbarBG() {
     const navbars = document.getElementsByClassName('navbar');
@@ -34,7 +66,7 @@ function updateNavbarLogo() {
     logoWrapper.style.height = '40px';
 
     const logoImg = document.createElement('img');
-    logoImg.src = '/assets/custom_app/images/mk_logo.png';
+    logoImg.src = !logotoggle ? '/assets/custom_app/images/mk_logo.png' : '/assets/custom_app/images/eco_logo.png';
     logoImg.alt = 'App Logo';
     logoImg.className = 'app-logo';
     logoImg.style.maxHeight = '35px';
@@ -190,26 +222,26 @@ function updatePageHeader() {
 
     const menuOptionSpan = document.querySelector('.menu-btn-group-label');
 
-    if (menuOptionSpan) {
-        const unwantedSVG = menuOptionSpan.querySelector('svg');
+    // if (menuOptionSpan) {
+    //     const unwantedSVG = menuOptionSpan.querySelector('svg');
 
-        if (unwantedSVG) unwantedSVG.remove();
+    //     if (unwantedSVG) unwantedSVG.remove();
 
-        let optionImg = menuOptionSpan.querySelector('img.option-icon');
+    //     let optionImg = menuOptionSpan.querySelector('img.option-icon');
 
-        if (!optionImg) {
-            optionImg = document.createElement('img');
-            optionImg.src = '/assets/custom_app/images/option.png';
-            optionImg.alt = 'Option';
-            optionImg.classList.add('option-icon');
-            optionImg.style.width = '16px';
-            optionImg.style.height = '16px';
-            optionImg.style.objectFit = 'contain';
-            menuOptionSpan.appendChild(optionImg);
-        } else {
-            optionImg.src = '/assets/custom_app/images/option.png';
-        }
-    }
+    //     if (!optionImg) {
+    //         optionImg = document.createElement('img');
+    //         optionImg.src = '/assets/custom_app/images/option.png';
+    //         optionImg.alt = 'Option';
+    //         optionImg.classList.add('option-icon');
+    //         optionImg.style.width = '16px';
+    //         optionImg.style.height = '16px';
+    //         optionImg.style.objectFit = 'contain';
+    //         menuOptionSpan.appendChild(optionImg);
+    //     } else {
+    //         optionImg.src = '/assets/custom_app/images/option.png';
+    //     }
+    // }
 
     const actionsSVGs = document.querySelectorAll('.actions-btn-group svg');
     actionsSVGs.forEach(svg => {
@@ -245,37 +277,37 @@ function updatePageHeader() {
 
 
 
-function updateSortIcon() {
-    const sortBtn = document.querySelector('.btn-order');
-    const sortIcon = document.querySelector('.btn-order .sort-order');
+// function updateSortIcon() {
+//     const sortBtn = document.querySelector('.btn-order');
+//     const sortIcon = document.querySelector('.btn-order .sort-order');
 
-    if (!sortBtn || !sortIcon) {
-        setTimeout(updateSortIcon, 100);
-        return;
-    }
+//     if (!sortBtn || !sortIcon) {
+//         setTimeout(updateSortIcon, 100);
+//         return;
+//     }
 
-    const sortOrder = sortBtn.getAttribute("data-value") || "asc";
+//     const sortOrder = sortBtn.getAttribute("data-value") || "asc";
 
-    const oldImg = sortIcon.querySelector('img');
-    if (oldImg) oldImg.remove();
+//     const oldImg = sortIcon.querySelector('img');
+//     if (oldImg) oldImg.remove();
 
-    const oldSvg = sortIcon.querySelector('svg');
-    if (oldSvg) oldSvg.remove();
+//     const oldSvg = sortIcon.querySelector('svg');
+//     if (oldSvg) oldSvg.remove();
 
-    const imgSrc = sortOrder === "desc"
-        ? "/assets/custom_app/images/sort-desc.png"
-        : "/assets/custom_app/images/sort-asc.png";
+//     const imgSrc = sortOrder === "desc"
+//         ? "/assets/custom_app/images/sort-desc.png"
+//         : "/assets/custom_app/images/sort-asc.png";
 
-    const altText = sortOrder === "desc" ? "Descending" : "Ascending";
+//     const altText = sortOrder === "desc" ? "Descending" : "Ascending";
 
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = altText;
-    img.style.width = "20px";
-    img.style.borderRadius = "2px";
+//     const img = document.createElement("img");
+//     img.src = imgSrc;
+//     img.alt = altText;
+//     img.style.width = "20px";
+//     img.style.borderRadius = "2px";
 
-    sortIcon.appendChild(img);
-}
+//     sortIcon.appendChild(img);
+// }
 
 function updatePageHeader1() {
     const menuOptionSpan = document.querySelector('.menu-btn-group-label');
@@ -286,7 +318,7 @@ function updatePageHeader1() {
     }
 
     const unwantedSVG = menuOptionSpan.querySelector('svg');
-    unwantedSVG.style.filter = 'invert(1)';
+    // unwantedSVG.style.filter = 'invert(1)';
 
     if (unwantedSVG) unwantedSVG.remove();
 
@@ -340,22 +372,17 @@ function updatePageHeader1() {
 
 
 
-// Call the function
-updateStatusColor();
+setTimeout(() => {
+    // updateStatusColor();
+    // updateSortIcon();
+    updatePageHeader1();
+    updatePageHeader();
+    updateNavbarBell();
+    updateNavbarLogo();
+    changeNavbarBG();
+    updateNavbarLogo()
+}, 800);
 
-
-
-
-
-
-
-updateSortIcon();
-updatePageHeader1();
-updatePageHeader();
-updateNavbarBell();
-updateNavbarLogo();
-changeNavbarBG();
-updateNavbarLogo()
 
 
 
