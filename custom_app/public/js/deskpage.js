@@ -7,7 +7,7 @@ const replaceMenuIcon = () => {
 
         if (!label.querySelector('img')) {
             const img = document.createElement('img');
-            img.src = "/assets/flowtech_ui/images/option.png";
+            img.src = "/assets/custom_app/images/option.png";
             img.alt = "Options";
             img.style.width = "16px";
             img.style.height = "16px";
@@ -38,7 +38,7 @@ const replacePageIcon = () => {
 
             if (!btn.querySelector('img')) {
                 const img = document.createElement('img');
-                img.src = "/assets/flowtech_ui/images/reload.png";
+                img.src = "/assets/custom_app/images/reload.png";
                 img.alt = "Reload";
                 img.style.width = "16px";
                 img.style.width = "16px";
@@ -62,7 +62,7 @@ const replacePageIcon = () => {
             if (svg) svg.remove();
             if (!btn.querySelector('img')) {
                 const img = document.createElement('img');
-                img.src = "/assets/flowtech_ui/images/printer.png";
+                img.src = "/assets/custom_app/images/printer.png";
                 img.alt = "Reload";
                 img.style.width = "16px";
                 img.style.height = "16px";
@@ -116,7 +116,7 @@ function replaceCustomButtonIcon() {
 
             if (!hiddenSpan.querySelector('img')) {
                 const img = document.createElement('img');
-                img.src = "/assets/flowtech_ui/images/menu.png";
+                img.src = "/assets/custom_app/images/menu.png";
                 img.alt = "Options";
                 img.style.width = "16px";
                 img.style.height = "16px";
@@ -142,7 +142,7 @@ function replaceAddItemIcon() {
 
             if (!textSpan.querySelector('img')) {
                 const img = document.createElement('img');
-                img.src = "/assets/flowtech_ui/images/add.png";
+                img.src = "/assets/custom_app/images/add.png";
                 img.alt = "Options";
                 img.style.width = "16px";
                 img.style.height = "16px";
@@ -246,10 +246,10 @@ const sortselection = () => {
         const updateSortIcon = () => {
             const sortValue = orderButton.dataset.sortState;
             if (sortValue === 'asc') {
-                img.src = '/assets/flowtech_ui/images/sort-asc.png';
+                img.src = '/assets/custom_app/images/sort-asc.png';
                 img.alt = 'Ascending';
             } else {
-                img.src = '/assets/flowtech_ui/images/sort-desc.png';
+                img.src = '/assets/custom_app/images/sort-desc.png';
                 img.alt = 'Descending';
             }
             orderButton.style.color = '#fff';
