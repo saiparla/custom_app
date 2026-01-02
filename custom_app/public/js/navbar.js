@@ -59,19 +59,20 @@ function updateNavbarLogo() {
     const logoWrapper = document.createElement('span');
     logoWrapper.style.backgroundColor = '#fff';
     logoWrapper.style.borderRadius = '10px';
-    logoWrapper.style.padding = '5px 10px';
+    logoWrapper.style.padding = !logotoggle ? '5px 10px' : '0px';
     logoWrapper.style.display = 'flex';
     logoWrapper.style.alignItems = 'center';
     logoWrapper.style.justifyContent = 'center';
     logoWrapper.style.boxShadow = '0px 0px 7px grey';
-    logoWrapper.style.height = '40px';
+    logoWrapper.style.height = !logotoggle ? '40px' : '43px';
 
     const logoImg = document.createElement('img');
     logoImg.src = !logotoggle ? '/assets/custom_app/images/mk_logo.png' : '/assets/custom_app/images/eco_logo.png';
     logoImg.alt = 'App Logo';
     logoImg.className = 'app-logo';
-    logoImg.style.maxHeight = '35px';
-    logoImg.style.width = 'auto';
+    logoImg.style.maxHeight = !logotoggle ? '35px' : '45px';
+    logoImg.style.width = !logotoggle ? 'auto' : 'auto'
+    // logoImg.style.filter = !logotoggle ? 'none' : 'drop-shadow(0px 0px 2px #ccc)  '
 
     logoWrapper.appendChild(logoImg);
 
