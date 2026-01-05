@@ -542,7 +542,7 @@ use.like-icon {
         text-align: center;
         margin: auto;
         background-color: transparent !important;
-        color: #007e85 !important;
+        /* color: #007e85 !important; */
     }
 
 }
@@ -701,7 +701,7 @@ use.like-icon {
         text-align: center;
         margin: auto;
         background-color: transparent !important;
-        color: #fff !important;
+        /* color: #fff !important; */
     }
 
 }
@@ -715,6 +715,8 @@ use.like-icon {
 
 .list-row-head {
     background-color: #007e85 !important;
+    color: #fff !important;
+
 
     .level-item {
         color: #fff !important;
