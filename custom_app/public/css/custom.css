@@ -536,16 +536,6 @@ use.like-icon {
 }
 
 
-.list-row-container .list-row-col.hidden-xs.list-row-col.hidden-xs.ellipsis {
-    span {
-        display: block;
-        text-align: center;
-        margin: auto;
-        background-color: transparent !important;
-        /* color: #007e85 !important; */
-    }
-
-}
 
 .list-row-container svg,
 .list-row-container .icon-sm {
