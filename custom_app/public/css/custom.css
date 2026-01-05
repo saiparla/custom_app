@@ -685,16 +685,7 @@ use.like-icon {
     background: #f0f0f0;
 }
 
-.list-row-col.hidden-xs.list-row-col.hidden-xs.ellipsis {
-    span {
-        display: block;
-        text-align: center;
-        margin: auto;
-        background-color: transparent !important;
-        /* color: #fff !important; */
-    }
 
-}
 
 
 /* svg,
